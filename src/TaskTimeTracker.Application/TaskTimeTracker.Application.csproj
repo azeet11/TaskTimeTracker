@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TaskTimeTracker.Domain\TaskTimeTracker.Domain.csproj" />
     <ProjectReference Include="..\TaskTimeTracker.Application.Contracts\TaskTimeTracker.Application.Contracts.csproj" />
+    <ProjectReference Include="..\TaskTimeTracker.EntityFrameworkCore\TaskTimeTracker.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

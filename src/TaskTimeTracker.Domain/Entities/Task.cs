@@ -1,35 +1,35 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; // Add this using directive
+using System.ComponentModel.DataAnnotations.Schema;
+using Volo.Abp.Domain.Entities.Auditing; // Add this using directive
 
-namespace TaskTimeTracker.Entities
+namespace TaskTimeTracker.Entities;
+
+public class Task : AuditedAggregateRoot<Guid>
 {
-    public class Task
-    {
-        [Key]
-        public Guid Id { get; set; }
+    [Key]
+    public Guid Id { get; set; }
 
-        [Required]
-        [StringLength(256)]
-        public string Title { get; set; }
+    [Required]
+    [StringLength(256)]
+    public string Title { get; set; }
 
-        public string Description { get; set; }
+    public string Description { get; set; }
 
-        public DateTime DueDate { get; set; }
+    public DateTime DueDate { get; set; }
 
-        public string Status { get; set; }
+    public string Status { get; set; }
 
-        public string Priority { get; set; }
+    public string Priority { get; set; }
 
-        public Guid ProjectId { get; set; }
+    public Guid ProjectId { get; set; }
 
-        [ForeignKey("ProjectId")]
-        public virtual Project Project { get; set; }
+    [ForeignKey("ProjectId")]
+    public virtual Project Project { get; set; }
 
-        public Guid UserId { get; set; }
+    public Guid UserId { get; set; }
 
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
-    }
+    [ForeignKey("UserId")]
+    public virtual User User { get; set; }
 }
 
